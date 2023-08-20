@@ -19,9 +19,9 @@ os.chdir(script_dir)
 
 version = get_arg(1, None)
 
-file_name = "BG3ModManager_v{}.zip".format(version)
+file_name = f"BG3ModManager_v{version}.zip"
 export_file = "BG3ModManager_Latest.zip"
-print("Writing release zip:{}".format(file_name))
+print(f"Writing release zip:{file_name}")
 
 def zipdir(src, zip_name):
     ziph = zipfile.ZipFile(zip_name, 'w')
@@ -36,7 +36,7 @@ def SilentRemove(f):
 			shutil.rmtree(f, ignore_errors=True)
 		else:
 			os.remove(f)
-		print("Removed {}".format(f))
+		print(f"Removed {f}")
 	except Exception as e:
 		print(e)
 
@@ -47,7 +47,7 @@ def SilentCopyAndRemove(source, dest):
 			shutil.rmtree(source, ignore_errors=True)
 		else:
 			os.remove(source)
-		print("Removed {}".format(source))
+		print(f"Removed {source}")
 
 import time
 time.sleep(3)
